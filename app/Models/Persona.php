@@ -8,11 +8,14 @@ use App\Models\Localidad;
 use App\Models\Municipio;
 use App\Model\Escuela;
 use App\Model\Apoyo;
+use Carbon\Carbon;
 
 
 class Persona extends Model
 {
     use HasFactory;
+    
+    protected $appends = ['edad'];
 
     public function localidad(){
         return $this->belongsTo(Localidad::class);
@@ -29,4 +32,10 @@ class Persona extends Model
     public function apoyos(){
         return $this->belongsToMany(Apoyo::class);
     }
+
+    public function getEdadAttribute(){
+        return Carbon::parse($this->fecha_nacimiento)->age;
+    }
+
+
 }

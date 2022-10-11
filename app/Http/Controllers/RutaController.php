@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Escuela;
+use App\Models\Ruta;
 
-class EscuelaController extends Controller
+class RutaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class EscuelaController extends Controller
      */
     public function index()
     {
-        return Escuela::all();
+        return Ruta::all();
     }
 
     /**
@@ -33,19 +33,12 @@ class EscuelaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
     public function store(Request $request)
     {
-        $escuela = new Escuela();
-        $escuela->ruta_id = $request->ruta_id;
-        $escuela->plantel = $request->plantel;
-        $escuela->localidad_id = $request->localidad_id;
-        $escuela->marginacion = $request->marginacion;
-        $escuela->cct = $request->cct;
-        $escuela->nivel = $request->nivel;
-        $escuela->municipio_id = $request->municipio_id;
-
-        $escuela->save();
+        $ruta = new Ruta();
+        $ruta->nombre = $request->nombre;
+        
+        $ruta->save();
     }
 
     /**
@@ -56,7 +49,7 @@ class EscuelaController extends Controller
      */
     public function show($id)
     {
-        return Escuela::findOrFail($id);
+        return Ruta::findOrFail($id);
     }
 
     /**
@@ -79,17 +72,11 @@ class EscuelaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $escuela = Escuela::findOrFail($id);
+        $ruta = Ruta::findOrFail($id);
+        $ruta->nombre = $request->nombre;
+        $ruta->update();
 
-        $escuela->ruta_id = $request->ruta_id;
-        $escuela->plantel = $request->plantel;
-        $escuela->localidad_id = $request->localidad_id;
-        $escuela->marginacion = $request->marginacion;
-        $escuela->cct = $request->cct;
-        $escuela->nivel = $request->nivel;
-        $escuela->municipio_id = $request->municipio_id;
-
-        $escuela->update();
+        
     }
 
     /**
@@ -100,7 +87,7 @@ class EscuelaController extends Controller
      */
     public function destroy($id)
     {
-        $escuela = Escuela::findOrFail($id);
-        $escuela->delete();
+        $ruta = Ruta::findOrFail($id);
+        $ruta->delete();
     }
 }
