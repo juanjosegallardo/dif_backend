@@ -36,26 +36,23 @@ class PersonaController extends Controller
 
     public function store(Request $request)
     {
-        DB::transaction(function (){
-            $persona = new Persona();
+        $persona = new Persona();
 
-            $persona->ap_paterno = $request->ap_paterno;
-            $persona->ap_materno = $request->ap_materno;
-            $persona->nombre = $request->nombre;
-            $persona->curp = $request->curp;
-            $persona->sexo = $request->sexo;
-            $persona->fecha_nacimiento = $request->fecha_nacimiento;
-            $persona->vulnerabilidad = $request->vulnerabilidad;
-            $persona->municipio_id = $request->municipio_id;
-            $persona->localidad_id = $request->localidad_id;
-            $persona->manzana = $request->manzana;
-            $persona->calle = $persona->calle;
-            $persona->colonia = $request->colonia;
-            $persona->numero_exterior = $request->numero_exterior;
+        $persona->ap_paterno = $request->ap_paterno;
+        $persona->ap_materno = $request->ap_materno;
+        $persona->nombre = $request->nombre;
+        $persona->curp = $request->curp;
+        $persona->sexo = $request->sexo;
+        $persona->fecha_nacimiento = $request->fecha_nacimiento;
+        $persona->vulnerabilidad = $request->vulnerabilidad;
+        $persona->municipio_id = $request->municipio_id;
+        $persona->localidad_id = $request->localidad_id;
+        $persona->manzana = $request->manzana;
+        $persona->calle = $persona->calle;
+        $persona->colonia = $request->colonia;
+        $persona->numero_exterior = $request->numero_exterior;
 
-            $persona->save();
-
-        });
+        $persona->save();
     }
 
     /**

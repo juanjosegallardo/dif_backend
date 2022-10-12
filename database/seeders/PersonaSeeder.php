@@ -16,11 +16,14 @@ class PersonaSeeder extends Seeder
      */
     public function run()
     {
-
+        /*
         $this->call([
             LocalidadSeeder::class,
-            MunicipioSeeder::class
-        ]);
+            MunicipioSeeder::class,
+            ApoyoSeeder::class,
+            RutaSeeder::class,
+            EscuelaSeeder::class,
+        ]);*/
         Persona::create([
             'ap_paterno' => Str::random(10),
             'ap_materno' => Str::random(10),
