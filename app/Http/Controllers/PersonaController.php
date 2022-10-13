@@ -48,7 +48,7 @@ class PersonaController extends Controller
         $persona->municipio_id = $request->municipio_id;
         $persona->localidad_id = $request->localidad_id;
         $persona->manzana = $request->manzana;
-        $persona->calle = $persona->calle;
+        $persona->calle = $request->calle;
         $persona->colonia = $request->colonia;
         $persona->numero_exterior = $request->numero_exterior;
 
