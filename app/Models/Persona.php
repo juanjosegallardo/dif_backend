@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Localidad;
 use App\Models\Municipio;
-use App\Model\Escuela;
-use App\Model\Apoyo;
+use App\Models\Escuela;
+use App\Models\Apoyo;
 use Carbon\Carbon;
 
 
@@ -26,7 +26,7 @@ class Persona extends Model
     }
 
     public function escuelas(){
-        return $this->belongsToMany(Escuela::class);
+        return $this->belongsToMany(Escuela::class, 'persona_escuela');
     }
 
     public function apoyos(){
