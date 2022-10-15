@@ -21,9 +21,11 @@ class LocalidadSeeder extends Seeder
             'nombre'=>'localidad 1'
         ]);
         */
+        /*
         DB::table('localidades')->insert([
-            'clave'=>"123456",
-            'nombre'=>'localidad 1'
-        ]);
+            
+        ]);*/
+
+        Localidad::factory(20)->create();
     }
 }

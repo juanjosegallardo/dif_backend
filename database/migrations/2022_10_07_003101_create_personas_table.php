@@ -22,14 +22,12 @@ class CreatePersonasTable extends Migration
             $table->string("sexo");
             $table->date("fecha_nacimiento");
             $table->string("vulnerabilidad");
-            $table->unsignedBigInteger("municipio_id");
             $table->unsignedBigInteger("localidad_id");
             $table->string("manzana");
             $table->string("calle");
             $table->string("colonia");
             $table->string("numero_exterior");
             $table->foreign("localidad_id")->references("id")->on("localidades");
-            $table->foreign("municipio_id")->references("id")->on("municipios");
 
             $table->timestamps();
         });

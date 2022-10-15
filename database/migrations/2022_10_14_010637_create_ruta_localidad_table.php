@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLocalidadesTable extends Migration
+class CreateRutaLocalidadTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateLocalidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('localidades', function (Blueprint $table) {
+        Schema::create('ruta_localidad', function (Blueprint $table) {
             $table->id();
-            $table->string("id_interno");
-            $table->string("clave");
-            $table->string("nombre");
-            $table->unsignedBigInteger("municipio_id");
-            $table->foreign("municipio_id")->references("id")->on("municipios");
+            $table->unsignedBigInteger("localidad_id");
+            $table->unsignedBigInteger("ruta_id");
+            $table->foreign("localidad_id")->references("id")->on("localidades");
+            $table->foreign("ruta_id")->references("id")->on("rutas");
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateLocalidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('localidades');
+        Schema::dropIfExists('ruta_localidad');
     }
 }

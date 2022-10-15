@@ -18,8 +18,8 @@ class PersonaSeeder extends Seeder
     {
         
         $this->call([
-            LocalidadSeeder::class,
             MunicipioSeeder::class,
+            LocalidadSeeder::class,
             ApoyoSeeder::class,
             RutaSeeder::class,
             EscuelaSeeder::class,

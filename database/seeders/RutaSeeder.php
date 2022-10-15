@@ -14,8 +14,6 @@ class RutaSeeder extends Seeder
      */
     public function run()
     {
-        Ruta::create([
-            "nombre"=>"r1"
-        ]);
+        Ruta::factory(10)->create();
     }
 }

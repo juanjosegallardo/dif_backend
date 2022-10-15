@@ -16,7 +16,7 @@ class MunicipioSeeder extends Seeder
     {
         Municipio::create([
             'clave'=>"123456",
-            'nombre'=>'localidad 1'
+            'nombre'=>'Pénjamo'
         ]);
     }
 }
