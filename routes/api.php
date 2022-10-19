@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\ReporteRutaController;
+use App\Http\Controllers\RutaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware([])->group(function (){
+    //persona
     Route::resource("/personas", PersonaController::class);
     Route::get("xlss/personas", [ExcelController::class, 'exportarPersonas']); 
+
+    //ruta
+    Route::resource("/rutas", RutaController::class);
 
     //Reportes
     Route::get("pdfs/rutas/desayunos/calientes", [ReporteRutaController::class, 'reporteRutaLocalidad']);
