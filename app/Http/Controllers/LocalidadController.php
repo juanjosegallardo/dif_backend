@@ -37,6 +37,7 @@ class LocalidadController extends Controller
     {
         $localidad = new Localidad();
 
+        $localidad->id_interno = $request->id_interno;
         $localidad->clave = $request->clave;
         $localidad->nombre = $request->nombre;
 
@@ -75,6 +76,7 @@ class LocalidadController extends Controller
     public function update(Request $request, $id)
     {
         $localidad = Localidad::findOrFail($id);
+        $localidad->id_interno = $request->id_interno;
         $localidad->clave = $request->clave;
         $localidad->nombre = $request->nombre;
 

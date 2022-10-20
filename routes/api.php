@@ -7,6 +7,8 @@ use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\ReporteRutaController;
 use App\Http\Controllers\RutaController;
+use App\Http\Controllers\LocalidadController;
+use App\Http\Controllers\EscuelaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,12 @@ Route::middleware([])->group(function (){
 
     //ruta
     Route::resource("/rutas", RutaController::class);
+
+    //localidad
+    Route::resource("/localidades", LocalidadController::class);
+
+    //escuela
+    Route::resource("/escuelas", EscuelaController::class);
 
     //Reportes
     Route::get("pdfs/rutas/desayunos/calientes", [ReporteRutaController::class, 'reporteRutaLocalidad']);

@@ -12,6 +12,7 @@ class Localidad extends Model
 {
     use HasFactory;
     protected $table = 'localidades';
+    protected $attributes = ["municipio_id"=>1];
 
     public function personas(){
         return $this->hasMany(Persona::class);

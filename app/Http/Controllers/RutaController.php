@@ -37,6 +37,7 @@ class RutaController extends Controller
     {
         $ruta = new Ruta();
         $ruta->nombre = $request->nombre;
+        $ruta->tipo = $request->tipo;
         
         $ruta->save();
     }
@@ -74,6 +75,7 @@ class RutaController extends Controller
     {
         $ruta = Ruta::findOrFail($id);
         $ruta->nombre = $request->nombre;
+        $ruta->tipo = $request->tipo;
         $ruta->update();
 
         
