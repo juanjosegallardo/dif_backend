@@ -15,7 +15,7 @@ class EscuelaFactory extends Factory
     {
         return [
             'id_interno'=>$this->faker->regexify('[0-9]{4}'),
-            "ruta_id"=>$this->faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10')),
+            //"ruta_id"=>$this->faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10')),
             "plantel"=>$this->faker->name(),
             "localidad_id"=>$this->faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10')),
             "marginacion"=>$this->faker->randomElement($array = array ('bajo','muy bajo','medio','alto')),

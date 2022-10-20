@@ -16,13 +16,13 @@ class CreateEscuelasTable extends Migration
         Schema::create('escuelas', function (Blueprint $table) {
             $table->id();
             $table->string("id_interno");
-            $table->unsignedBigInteger("ruta_id");
+            //$table->unsignedBigInteger("ruta_id");
             $table->string("plantel");
             $table->unsignedBigInteger("localidad_id");
             $table->string("marginacion");
             $table->string("cct");
             $table->string("nivel");
-            $table->foreign("ruta_id")->references("id")->on("rutas");
+            //$table->foreign("ruta_id")->references("id")->on("rutas");
             $table->foreign("localidad_id")->references("id")->on("localidades");
             $table->timestamps();
         });

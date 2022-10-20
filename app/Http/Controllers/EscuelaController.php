@@ -38,7 +38,7 @@ class EscuelaController extends Controller
     {
         $escuela = new Escuela();
         $escuela->id_interno = $request->id_interno;
-        $escuela->ruta_id = $request->ruta_id;
+        //$escuela->ruta_id = $request->ruta_id;
         $escuela->plantel = $request->plantel;
         $escuela->localidad_id = $request->localidad_id;
         $escuela->marginacion = $request->marginacion;
@@ -82,7 +82,7 @@ class EscuelaController extends Controller
         $escuela = Escuela::findOrFail($id);
 
         $escuela->id_interno = $request->id_interno;
-        $escuela->ruta_id = $request->ruta_id;
+        //$escuela->ruta_id = $request->ruta_id;
         $escuela->plantel = $request->plantel;
         $escuela->localidad_id = $request->localidad_id;
         $escuela->marginacion = $request->marginacion;
