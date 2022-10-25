@@ -40,6 +40,6 @@ class PersonaSeeder extends Seeder
             'colonia' =>Str::random(10),
             'numero_exterior' => Str::random(10)
         ]);*/
-        Persona::factory(2000)->create();
+        Persona::factory(1000)->create();
     }
 }

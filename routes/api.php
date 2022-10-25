@@ -43,5 +43,7 @@ Route::middleware([])->group(function (){
 
     //Reportes
     Route::get("pdfs/rutas/desayunos/calientes", [ReporteRutaController::class, 'reporteRutaLocalidad']);
+    Route::get("pdfs/rutas/desayunos/calientes/prescolar-primaria", [ReporteRutaController::class, 'reporteRutaEscuelaLocalidades']);
+    
 
 });

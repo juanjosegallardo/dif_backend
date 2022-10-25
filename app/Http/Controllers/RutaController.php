@@ -14,7 +14,7 @@ class RutaController extends Controller
      */
     public function index()
     {
-        return Ruta::all();
+        return Ruta::orderBy("tipo", "asc")->orderByRaw("CAST(nombre AS unsigned) ASC")->get();
     }
 
     /**

@@ -28,7 +28,8 @@ class PersonaFactory extends Factory
             'manzana' => $this->faker->citySuffix(),
             'calle' => $this->faker->streetName(),
             'colonia' => $this->faker->streetSuffix(),
-            'numero_exterior' => $this->faker->buildingNumber()
+            'numero_exterior' => $this->faker->buildingNumber(),
+            'estudiante' => $this->faker->boolean()
         ];
     }
 }

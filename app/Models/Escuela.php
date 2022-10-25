@@ -11,18 +11,19 @@ use App\Models\Persona;
 class Escuela extends Model
 {
     use HasFactory;
-
+    protected $table = 'escuelas';
     public function localidad(){
         return $this->belongsTo(Localidad::class);
     }
-
+/*
     public function ruta(){
         return $this->belongsTo(Ruta::class);
-    }
+    }*/
 
     public function personas(){
         return $this->belongsToMany(Persona::class);
     }
+    
 
 
     

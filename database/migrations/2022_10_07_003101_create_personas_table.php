@@ -27,6 +27,7 @@ class CreatePersonasTable extends Migration
             $table->string("calle");
             $table->string("colonia");
             $table->string("numero_exterior");
+            $table->boolean("estudiante");
             $table->foreign("localidad_id")->references("id")->on("localidades");
 
             $table->timestamps();

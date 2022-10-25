@@ -20,7 +20,7 @@ class EscuelaFactory extends Factory
             "localidad_id"=>$this->faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10')),
             "marginacion"=>$this->faker->randomElement($array = array ('bajo','muy bajo','medio','alto')),
             "cct"=>$this->faker->regexify('[0-9]{4}'),
-            "nivel"=>$this->faker->randomElement($array = array ('primaria','secuendaria','prescolar','bachilerato'))
+            "nivel"=>$this->faker->randomElement($array = array ('PRIMARIA','SECUNDARIA','PRESCOLAR','BACHILLERATO'))
         ];
     }
 }

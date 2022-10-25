@@ -10,10 +10,12 @@ use App\Models\Localidad;
 class Ruta extends Model
 {
     use HasFactory;
+    protected $table = 'rutas';
 
+    /*
     public function escuelas(){
         return $this->hasMany(Escuela::class);
-    }
+    }*/
 
     public function localidades(){
         return $this->belongsToMany(Localidad::class, 'ruta_localidad');

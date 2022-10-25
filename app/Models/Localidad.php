@@ -25,6 +25,5 @@ class Localidad extends Model
     public function rutas(){
         return $this->belongsToMany(Ruta::class, 'ruta_localidad');
     }
-
     
 }
