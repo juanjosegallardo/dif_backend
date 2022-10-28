@@ -9,6 +9,7 @@ use App\Http\Controllers\ReporteRutaController;
 use App\Http\Controllers\RutaController;
 use App\Http\Controllers\LocalidadController;
 use App\Http\Controllers\EscuelaController;
+use App\Http\Controllers\EstudianteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,7 @@ Route::middleware([])->group(function (){
     Route::get("pdfs/rutas/desayunos/calientes", [ReporteRutaController::class, 'reporteRutaLocalidad']);
     Route::get("pdfs/rutas/desayunos/calientes/prescolar-primaria", [ReporteRutaController::class, 'reporteRutaEscuelaLocalidades']);
     
+    //Estudiante
+    Route::get("estudiantes", [EstudianteController::class, 'obtenerEstudiantes']);
 
 });

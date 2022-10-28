@@ -56,9 +56,10 @@ class PersonaController extends Controller
         $persona->calle = $request->calle;
         $persona->colonia = $request->colonia;
         $persona->numero_exterior = $request->numero_exterior;
+        $persona->estudiante = $request->estudiante;
         
         $persona->save();        
-        $persona->escuelas()->attach($escuela);
+        $persona->escuelas()->attach($escuela, ["estatus"=>"activo"]);
         
     }   
 

@@ -44,22 +44,29 @@
             <th>CLAVE</th>
             <th>BENEFICIARIOS</th>
         </tr>
-        @foreach($rutas as $ruta)
+        @foreach($escuelas as $escuela)
             <tr>
-                <td>
-                    {{$ruta["nombre"]}}
-                </td>
-                @foreach($ruta["localidades"] as $localidad)
+                @foreach($escuela["localidad"]["rutas"] as $ruta)
                     <td>
-                        {{$localidad["id_interno"]}}
-                    </td>
-                    <td>
-                        PÉNJAMO
-                    </td>
-                    <td>
-                        {{$localidad["nombre"]}}
+                        {{$ruta["nombre"]}}
                     </td>
                 @endforeach
+
+                <td>
+                    {{$escuela["localidad"]["id_interno"]}}
+                </td>
+                <td>
+                    PÉNJAMO
+                </td>
+                <td>
+                    {{$escuela["localidad"]["nombre"]}}
+                </td>
+                <td>
+                    {{$escuela["plantel"]}}
+                </td>
+                <td>
+                    {{$escuela["cct"]}}
+                </td> 
             </tr>
         @endforeach
 

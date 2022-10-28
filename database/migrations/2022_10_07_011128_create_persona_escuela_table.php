@@ -17,6 +17,7 @@ class CreatePersonaEscuelaTable extends Migration
             $table->id();
             $table->unsignedBigInteger("escuela_id");
             $table->unsignedBigInteger("persona_id");
+            $table->string("estatus");
             $table->foreign("escuela_id")->references("id")->on("escuelas");
             $table->foreign("persona_id")->references("id")->on("personas");
             $table->timestamps();

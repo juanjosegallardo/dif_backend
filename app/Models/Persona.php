@@ -37,5 +37,9 @@ class Persona extends Model
         return Carbon::parse($this->fecha_nacimiento)->age;
     }
 
+    public function escuelaActual(){
+        return $this->belongsToMany(Escuela::class, 'persona_escuela')->latest();
+    }
+
 
 }
